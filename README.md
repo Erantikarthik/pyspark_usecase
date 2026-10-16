@@ -1,60 +1,66 @@
 # Distributed Data Processing with PySpark
 
 ## Project Overview
-This project demonstrates distributed data processing using PySpark in Databricks. It uses sample e-commerce order data to explore, clean, transform, and analyze sales information.
+
+This project demonstrates how to process and analyze e-commerce order data using PySpark in Databricks Free Edition. It covers data cleaning, duplicate removal, data transformation, and sales analysis.
 
 ## Technologies Used
-- Databricks Free Edition
-- Apache Spark
-- PySpark
+
 - Python
-- Spark DataFrames
+- Apache Spark (PySpark)
+- Databricks Free Edition
+- Delta Lake
 - Git and GitHub
 
 ## Project Workflow
-1. Initialize the Spark session.
-2. Create a sample e-commerce dataset.
-3. Explore records, schema, data types, and summary statistics.
-4. Identify missing values.
-5. Remove rows with missing customer names or products.
-6. Filter out invalid prices and quantities.
-7. Remove duplicate order IDs.
-8. Calculate total order amounts.
-9. Analyze revenue by product and customer.
-10. Apply transformations and filters.
-11. Save processed sales data as a Delta table, where supported.
 
-## Data Cleaning
-The sample dataset contains 11 original records. The cleaning process removes records with missing required values, invalid prices or quantities, and duplicate order IDs.
+1. Created a sample e-commerce orders dataset.
+2. Removed records with missing customer names or product values.
+3. Filtered out invalid prices and quantities.
+4. Removed duplicate order IDs.
+5. Calculated total sales for each order.
+6. Aggregated revenue and order counts by product.
+7. Saved processed data as a Delta table in Databricks.
+8. Exported the processed results to CSV.
 
-The resulting dataset contains 7 records.
+## Data Quality Checks
 
-## Results
-- Cleaned orders: 7
-- Total revenue: 345,000
-- Average order value: 49,285.71
+- Missing customer and product values were removed.
+- Non-positive prices and quantities were excluded.
+- Duplicate order IDs were removed.
+- The cleaned dataset contains 7 orders.
 
-### Product-wise Revenue
+## Key Results
 
-| Product | Revenue | Orders |
-|---|---:|---:|
-| Laptop | 220,000 | 3 |
-| Mobile | 80,000 | 2 |
-| Tablet | 45,000 | 2 |
+| Metric | Result |
+|---|---:|
+| Cleaned orders | 7 |
+| Total revenue | ₹345,000 |
+| Average order value | ₹49,285.71 |
+| Highest-revenue product | Laptop |
+| Laptop revenue | ₹220,000 |
 
-## Learning Outcomes
-- Working with Spark DataFrames
-- Cleaning and validating data
-- Performing distributed transformations and aggregations
-- Calculating sales metrics
-- Using Databricks Serverless compute
+## Project Files
+
+- `Distributed_Data_Processing_PySpark.ipynb` — notebook containing the processing workflow.
+- `processed_sales.csv` — cleaned and transformed order data.
+- `README.md` — project documentation.
+- `.gitignore` — excludes specified temporary files and local configuration.
 
 ## Limitations
-Traditional RDD operations requiring direct SparkContext access were not executed because Databricks Serverless does not support that access.
+
+This project uses a small sample dataset for learning and demonstration. Some RDD operations were not executed because SparkContext access is restricted in Databricks Serverless.
 
 ## Future Improvements
-- Process larger datasets.
-- Add automated data quality checks.
-- Build a scheduled data pipeline.
-- Extend the project with Bronze, Silver, and Gold layers.
-- Add further performance and scalability experiments.
+
+- Process a larger real-world dataset.
+- Add automated data validation.
+- Implement incremental data processing.
+- Schedule pipeline execution.
+- Build a Power BI dashboard for sales analysis.
+
+## Author
+
+Eranti Karthik
+
+GitHub: https://github.com/Erantikarthik
