@@ -25,15 +25,16 @@ This project demonstrates how to process and analyze e-commerce order data using
 
 ## Data Quality Checks
 
-- Missing customer and product values were removed.
-- Non-positive prices and quantities were excluded.
-- Duplicate order IDs were removed.
-- The cleaned dataset contains 7 orders.
+- Removed records with missing customer names or product values.
+- Excluded records with non-positive prices or quantities.
+- Removed duplicate order IDs.
+- Retained 7 valid orders from the original 11 records.
 
 ## Key Results
 
 | Metric | Result |
 |---|---:|
+| Original records | 11 |
 | Cleaned orders | 7 |
 | Total revenue | ₹345,000 |
 | Average order value | ₹49,285.71 |
@@ -42,7 +43,7 @@ This project demonstrates how to process and analyze e-commerce order data using
 
 ## Project Files
 
-- `Distributed_Data_Processing_PySpark.ipynb` — notebook containing the processing workflow.
+- `Distributed_Data_Processing_PySpark.ipynb` — notebook containing the PySpark processing workflow.
 - `processed_sales.csv` — cleaned and transformed order data.
 - `README.md` — project documentation.
 - `.gitignore` — excludes specified temporary files and local configuration.
@@ -54,13 +55,17 @@ This project uses a small sample dataset for learning and demonstration. Some RD
 ## Future Improvements
 
 - Process a larger real-world dataset.
-- Add automated data validation.
+- Add automated data validation checks.
 - Implement incremental data processing.
 - Schedule pipeline execution.
 - Build a Power BI dashboard for sales analysis.
 
 ## Author
 
-Eranti Karthik
+**Eranti Karthik**
 
 GitHub: https://github.com/Erantikarthik
+
+## Project Repository
+
+https://github.com/Erantikarthik/pyspark_usecase
